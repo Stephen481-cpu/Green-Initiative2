@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Projects - Green Initiative</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles specific to projects page */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .project-card {
+            background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+            border: 2px solid #20b2aa;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(32, 178, 170, 0.3);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            background-color: #006400;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2em;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-status {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .status-ongoing {
+            background-color: #ffd700;
+            color: #000;
+        }
+
+        .status-completed {
+            background-color: #32cd32;
+            color: #fff;
+        }
+
+        .status-planned {
+            background-color: #ff6347;
+            color: #fff;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            color: #20b2aa;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+        }
+
+        .project-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+
+        .project-content p {
+            color: #ccc;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .project-stats {
+            display: flex;
+            gap: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #444;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #d2691e;
+        }
+
+        .stat-label {
+            font-size: 0.8em;
+            color: #888;
+        }
+
+        .btn-details {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #d2691e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-details:hover {
+            background-color: #a0522d;
+        }
+
+        .filter-tabs {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            background-color: transparent;
+            border: 2px solid #20b2aa;
+            color: #20b2aa;
+            padding: 10px 25px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 25px;
+            transition: all 0.3s;
+            font-size: 1em;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: #20b2aa;
+            color: #000;
+        }
+
+        .impact-section {
+            background: linear-gradient(135deg, #1a1a1a, #0d3328);
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 1000px;
+            border-radius: 15px;
+            border: 2px solid #20b2aa;
+        }
+
+        .impact-section h3 {
+            color: #20b2aa;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2em;
+        }
+
+        .impact-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .impact-item {
+            padding: 20px;
+        }
+
+        .impact-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+        }
+
+        .impact-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #d2691e;
+            display: block;
+        }
+
+        .impact-label {
+            color: #aaa;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Banner -->
+    <header class="banner">
+        <div class="banner-content">
+            <h1>GREEN INITIATIVE</h1>
+            <p>"Riding on Technology, Inspiring Innovation for a Sustainable Future"</p>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="activities.html">Activities</a></li>
+            <li class="dropdown">
+                <a href="portfolio.html" class="active">Portfolio ▼</a>
+                <ul class="dropdown-content">
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </ul>
+            </li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="donate.html">Donate</a></li>
+        </ul>
+    </nav>
+
+    <!-- Image Row Section -->
+    <section class="image-row">
+        <div class="img-box">
+            <img src="images/project1.jpg" alt="Solar Project">
+        </div>
+        <div class="img-box">
+            <img src="images/project2.jpg" alt="Reforestation">
+        </div>
+        <div class="img-box">
+            <img src="images/project3.jpg" alt="Water Conservation">
+        </div>
+        <div class="img-box">
+            <img src="images/project4.jpg" alt="Community Garden">
+        </div>
+    </section>
+
+    <!-- Main Content Section -->
+    <main class="content-section">
+        <h2>Our Projects Portfolio</h2>
+        
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 30px; color: #ccc; font-size: 1.1em;">
+            Explore our diverse range of climate action projects spanning renewable energy, reforestation, 
+            water conservation, and community empowerment across the globe.
+        </p>
+
+        <!-- Filter Tabs -->
+        <div class="filter-tabs">
+            <button class="filter-btn active" onclick="filterProjects('all')">All Projects</button>
+            <button class="filter-btn" onclick="filterProjects('ongoing')">Ongoing</button>
+            <button class="filter-btn" onclick="filterProjects('completed')">Completed</button>
+            <button class="filter-btn" onclick="filterProjects('planned')">Planned</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="projects-grid" id="projectsGrid">
+            
+            <!-- Project 1 -->
+            <article class="project-card" data-category="ongoing">
+                <div class="project-image">
+                    <img src="images/solar-africa.jpg" alt="Solar Africa Initiative">
+                    <span class="project-status status-ongoing">Ongoing</span>
+                </div>
+                <div class="project-content">
+                    <h3>Solar Africa Initiative</h3>
+                    <div class="project-meta">
+                        <span>📍 Kenya, Tanzania</span>
+                        <span>📅 2023-2025</span>
+                    </div>
+                    <p>Installing solar power systems in 50 rural communities, providing clean energy access to over 10,000 households and reducing carbon emissions by 5,000 tons annually.</p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-number">10K+</span>
+                            <span class="stat-label">Beneficiaries</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">$2M</span>
+                            <span class="stat-label">Budget</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">75%</span>
+                            <span class="stat-label">Complete</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-details">View Details</a>
+                </div>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card" data-category="completed">
+                <div class="project-image">
+                    <img src="images/amazon-reforest.jpg" alt="Amazon Reforestation">
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <div class="project-content">
+                    <h3>Amazon Reforestation Drive</h3>
+                    <div class="project-meta">
+                        <span>📍 Brazil, Peru</span>
+                        <span>📅 2020-2023</span>
+                    </div>
+                    <p>Successfully planted 2 million native trees across 5,000 hectares of deforested Amazon land, restoring critical biodiversity corridors and carbon sinks.</p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-number">2M</span>
+                            <span class="stat-label">Trees Planted</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">5K ha</span>
+                            <span class="stat-label">Area Restored</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Complete</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-details">View Details</a>
+                </div>
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card" data-category="ongoing">
+                <div class="project-image">
+                    <img src="images/water-india.jpg" alt="Clean Water India">
+                    <span class="project-status status-ongoing">Ongoing</span>
+                </div>
+                <div class="project-content">
+                    <h3>Clean Water India Project</h3>
+                    <div class="project-meta">
+                        <span>📍 Rajasthan, India</span>
+                        <span>📅 2022-2024</span>
+                    </div>
+                    <p>Building rainwater harvesting systems and wells in drought-prone regions, providing sustainable water access to 25 villages and 15,000 residents.</p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-number">25</span>
+                            <span class="stat-label">Villages</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50</span>
+                            <span class="stat-label">Water Systems</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">60%</span>
+                            <span class="stat-label">Complete</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-details">View Details</a>
+                </div>
+            </article>
+
+            <!-- Project 4 -->
+            <article class="project-card" data-category="planned">
+                <div class="project-image">
+                    <img src="images/wind-farm.jpg" alt="Wind Farm Europe">
+                    <span class="project-status status-planned">Planned</span>
+                </div>
+                <div class="project-content">
+                    <h3>Baltic Wind Farm Expansion</h3>
+                    <div class="project-meta">
+                        <span>📍 Estonia, Latvia</span>
+                        <span>📅 2025-2028</span>
+                    </div>
+                    <p>Developing offshore wind capacity to power 200,000 homes with renewable energy, creating 500 green jobs and reducing regional fossil fuel dependence.</p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-number">200K</span>
+                            <span class="stat-label">Homes Powered</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">€50M</span>
+                            <span class="stat-label">Investment</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">0%</span>
+                            <span class="stat-label">Started</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-details">View Details</a>
+                </div>
+            </article>
+
+            <!-- Project 5 -->
+            <article class="project-card" data-category="completed">
+                <div class="project-image">
+                    <img src="images/coral-reef.jpg" alt="Coral Restoration">
+                    <span class="project-status status-completed">Completed</span>
+                </div>
+                <div class="project-content">
+                    <h3>Great Barrier Reef Restoration</h3>
+                    <div class="project-meta">
+                        <span>📍 Australia</span>
+                        <span>📅 2019-2023</span>
+                    </div>
+                    <p>Pioneering coral gardening techniques to restore 100 hectares of damaged reef, with 85% survival rate of transplanted corals and revived marine ecosystems.</p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-number">100 ha</span>
+                            <span class="stat-label">Reef Restored</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">85%</span>
+                            <span class="stat-label">Survival Rate</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">100%</span>
+                            <span class="stat-label">Complete</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-details">View Details</a>
+                </div>
+            </article>
+
+            <!-- Project 6 -->
+            <article class="project-card" data-category="ongoing">
+                <div class="project-image">
+                    <img src="images/urban-farming.jpg" alt="Urban Farming">
+                    <span class="project-status status-ongoing">Ongoing</span>
+                </div>
+                <div class="project-content">
+                    <h3>Urban Green Spaces London</h3>
+                    <div class="project-meta">
+                        <span>📍 London, UK</span>
+                        <span>📅 2023-2026</span>
+                    </div>
+                    <p>Transforming 30 unused urban plots into community gardens and green spaces, reducing city heat islands and improving air quality for 50,000 residents.</p>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <span class="stat-number">30</span>
+                            <span class="stat-label">Green Spaces</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50K</span>
+                            <span class="stat-label">Residents</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">40%</span>
+                            <span class="stat-label">Complete</span>
+                        </div>
+                    </div>
+                    <a href="#" class="btn-details">View Details</a>
+                </div>
+            </article>
+
+        </div>
+
+        <!-- Impact Summary Section -->
+        <section class="impact-section">
+            <h3>Our Collective Impact</h3>
+            <div class="impact-stats">
+                <div class="impact-item">
+                    <div class="impact-icon">🌍</div>
+                    <span class="impact-number">15</span>
+                    <span class="impact-label">Countries Reached</span>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">🌳</div>
+                    <span class="impact-number">5M+</span>
+                    <span class="impact-label">Trees Planted</span>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">⚡</div>
+                    <span class="impact-number">100K</span>
+                    <span class="impact-label">Homes Powered</span>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">💧</div>
+                    <span class="impact-number">500K</span>
+                    <span class="impact-label">People with Clean Water</span>
+                </div>
+                <div class="impact-item">
+                    <div class="impact-icon">🤝</div>
+                    <span class="impact-number">200+</span>
+                    <span class="impact-label">Partner Organizations</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Partnership CTA -->
+        <div style="text-align: center; margin-top: 40px; padding: 30px; background-color: #1a1a1a; border-radius: 10px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <h3 style="color: #20b2aa; margin-bottom: 15px;">Want to Support These Projects?</h3>
+            <p style="color: #ccc; margin-bottom: 20px;">Your donation directly funds these life-changing environmental initiatives. Partner with us to expand our impact.</p>
+            <a href="donate.html" style="display: inline-block; padding: 15px 40px; background-color: #d2691e; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 1.1em; transition: all 0.3s;">Donate Now</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-box">
+            <h4>Social Media</h4>
+            <p>Facebook | Twitter | Instagram | LinkedIn</p>
+        </div>
+        <div class="footer-box">
+            <h4>Address</h4>
+            <p>123 Green Street<br>London, UK<br>Email: info@greeninitiative.org</p>
+        </div>
+        <div class="footer-box">
+            <h4>Copyright</h4>
+            <p>&copy; 2024 Green Initiative.<br>All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Filtering -->
+    <script>
+        function filterProjects(category) {
+            // Update active button
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filter projects
+            const cards = document.querySelectorAll('.project-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'block';
+                    card.style.animation = 'fadeIn 0.5s ease-in';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Add fade-in animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

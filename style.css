@@ -1,0 +1,181 @@
+/* ===========================
+   Programmer-Loved Dark Theme
+   =========================== */
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+body {
+  font-family: "Fira Code", "Courier New", monospace;
+  background-color: #111; /* dark background */
+  color: #e0e0e0; /* light text */
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  background: #004d00; /* deep green */
+  color: #e0e0e0;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.2rem;
+  color: #80ff80; /* neon green accent */
+}
+
+
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Sections */
+section {
+  margin: 40px 0;
+}
+
+section h2 {
+  margin-bottom: 20px;
+  color: #80ff80;
+  border-bottom: 2px solid #004d00;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+/* Navigation Bar */
+nav {
+  background: #003300;        /* dark green background */
+  display: flex;              /* flexbox for horizontal layout */
+  justify-content: center;    /* center the links horizontally */
+  flex-wrap: nowrap;          /* keep them in one line */
+}
+
+nav a {
+  color: #80ff80;             /* neon green text */
+  text-decoration: none;
+  padding: 15px 20px;
+  font-weight: bold;
+  transition: color 0.3s, background 0.3s;
+}
+
+nav a:hover {
+  background: #004d00;        /* darker green hover */
+  color: #ffffff;
+}
+/* Gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 15px;
+}
+
+/* Global Image Sizing */
+img {
+  width: 90px;
+  height: 150px;
+  object-fit: cover;   /* prevents distortion */
+  border: 2px solid #004d00;
+  border-radius: 4px;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+img:hover {
+  transform: scale(1.05);
+  border-color: #80ff80;
+}
+
+/* Forms */
+form {
+  background: #1a1a1a;
+  padding: 20px;
+  border: 1px solid #004d00;
+  border-radius: 6px;
+}
+
+form label {
+  display: block;
+  margin: 10px 0 5px;
+  color: #80ff80;
+}
+
+form input, form textarea, form select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  background: #111;
+  border: 1px solid #004d00;
+  color: #e0e0e0;
+  border-radius: 4px;
+}
+
+form input:focus, form textarea:focus, form select:focus {
+  outline: none;
+  border-color: #80ff80;
+}
+
+form button {
+  background: #004d00;
+  color: #e0e0e0;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #80ff80;
+  color: #111;
+}
+
+/* Footer */
+footer {
+  background: #003300;
+  color: #e0e0e0;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+footer .social a {
+  color: #80ff80;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+footer .social a:hover {
+  color: #ffffff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  nav a {
+    text-align: center;
+    border-top: 1px solid rgba(128,255,128,0.2);
+  }
+     }
